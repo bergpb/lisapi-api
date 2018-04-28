@@ -62,10 +62,11 @@ def getStatus():
                       'network_out' : tx_float_mb
                   },
               })
+  print(status)
+  return jsonify(status = status)
+  print('--------------------------------')
 
-  return jsonify(status = status)  
-
-@app.route('/api/rasp', methods=['GET'])
+@app.route('/api/pins', methods=['GET'])
 def getStatePins():
 
   listapinos = [4, 5, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
@@ -80,12 +81,12 @@ def getStatePins():
                   'state': state
                   }
     print (state_pins)
-    print('--------------------------------')
     pins.append(state_pins)
+    print('--------------------------------')
 
   return jsonify({'status_pins': pins})
 
-@app.route('/api/rasp/<pin>', methods=['GET'])
+@app.route('/api/pins/<pin>', methods=['GET'])
 def setStatePins(pin):
 
   try:
@@ -121,7 +122,7 @@ def setStatePins(pin):
   state_pins = {'pin': pin, 'state': state}
   print (state_pins)
   return jsonify({'state_pins': state_pins})
-  print('---------------------------------')
+  print('--------------------------------')
 
 
 if __name__=='__main__':
