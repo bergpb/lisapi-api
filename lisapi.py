@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import commands
 import RPi.GPIO as gpio
 from flask import Flask, jsonify
 
