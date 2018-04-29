@@ -3,9 +3,12 @@
 import os
 import commands
 import RPi.GPIO as gpio
+from flask_cors import CORS
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 gpio.setmode(gpio.BCM)
 gpio.setwarnings(False)
