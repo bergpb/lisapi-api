@@ -23,12 +23,12 @@ def getStatus():
   quantProc = commands.getoutput("ps -aux | wc -l")
 
   mem_total = commands.getoutput("free -h | grep 'Mem' | cut -c 16-18")
-  mem_used = commands.getoutput("free -h | grep 'Mem' | cut -c 28-30")
-  mem_free = commands.getoutput("free -h | grep 'Mem' | cut -c 41-42")
+  mem_used = commands.getoutput("free -h | grep 'Mem' | cut -c 29-30")
+  mem_free = commands.getoutput("free -h | grep 'Mem' | cut -c 40-42")
 
   uptime = commands.getoutput("uptime -p")
 
-  total = commands.getoutput("df -h | grep '/dev'| cut -c 18-29 | head -1")
+  total = commands.getoutput("df -h | grep '/dev'| cut -c 18-19 | head -1")
   used = commands.getoutput("df -h | grep '/dev'| cut -c 23-25 | head -1")
   free = commands.getoutput("df -h | grep '/dev'| cut -c 30-31 | head -1")
   percent = commands.getoutput("df -h | grep '/dev'| cut -c 35-36 | head -1")
