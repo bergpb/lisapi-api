@@ -18,7 +18,7 @@ def getStatus():
 
   status = {}
 
-  temp = commands.getoutput("vcgencmd measure_temp | cut -c 6-9")
+  temp = int(open('/sys/class/thermal/thermal_zone0/temp').read()) / 1e3
 
   quantProc = commands.getoutput("ps -aux | wc -l")
 
