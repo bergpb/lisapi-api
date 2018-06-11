@@ -28,9 +28,9 @@ def getStatus():
 
   uptime = commands.getoutput("uptime -p")
 
-  total = int(commands.getoutput("df -h | grep '/dev'| cut -c 18-19 | head -1"))
-  used = int(commands.getoutput("df -h | grep '/dev'| cut -c 23-25 | head -1"))
-  free = int(commands.getoutput("df -h | grep '/dev'| cut -c 30-31 | head -1"))
+  total = commands.getoutput("df -h | grep '/dev'| cut -c 18-19 | head -1")
+  used = commands.getoutput("df -h | grep '/dev'| cut -c 23-25 | head -1")
+  free = commands.getoutput("df -h | grep '/dev'| cut -c 30-31 | head -1")
   percent = commands.getoutput("df -h | grep '/dev'| cut -c 35-36 | head -1")
 
   date = commands.getoutput("date")
