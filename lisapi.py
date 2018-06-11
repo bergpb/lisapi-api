@@ -26,14 +26,14 @@ def getStatus():
   mem_used = int(commands.getoutput("free -h | grep 'Mem' | cut -c 29-30"))
   mem_free = int(commands.getoutput("free -h | grep 'Mem' | cut -c 40-42"))
 
-  uptime = int(commands.getoutput("uptime -p"))
+  uptime = commands.getoutput("uptime -p")
 
   total = int(commands.getoutput("df -h | grep '/dev'| cut -c 18-19 | head -1"))
   used = int(commands.getoutput("df -h | grep '/dev'| cut -c 23-25 | head -1"))
   free = int(commands.getoutput("df -h | grep '/dev'| cut -c 30-31 | head -1"))
-  percent = int(commands.getoutput("df -h | grep '/dev'| cut -c 35-36 | head -1"))
+  percent = commands.getoutput("df -h | grep '/dev'| cut -c 35-36 | head -1")
 
-  date = int(commands.getoutput("date"))
+  date = commands.getoutput("date")
 
   rx_wifi = commands.getoutput("cat /sys/class/net/wlan0/statistics/rx_bytes")
   rx_float = float(rx_wifi)
