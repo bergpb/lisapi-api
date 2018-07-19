@@ -23,7 +23,7 @@ def getStatus():
   quantProc = int(commands.getoutput("ps -aux | wc -l"))
 
   mem_total = int(commands.getoutput("free -h | grep 'Mem' | cut -c 16-18"))
-  mem_used = int(commands.getoutput("free -h | grep 'Mem' | cut -c 29-30"))
+  mem_used = int(commands.getoutput("free -h | grep 'Mem' | cut -c 28-30"))
   mem_free = int(commands.getoutput("free -h | grep 'Mem' | cut -c 40-42"))
 
   uptime = commands.getoutput("uptime -p")
