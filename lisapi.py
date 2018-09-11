@@ -71,11 +71,11 @@ def getStatus():
 @app.route('/api/pins', methods=['GET'])
 def getStatePins():
 
-  listapinos = [4, 5, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+  listpins = [4, 5, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
   pins = []
 
-  for i in range(len(listapinos)):
-    pin = listapinos[i]
+  for i in range(len(listpins)):
+    pin = listpins[i]
     gpio.setup(pin, gpio.OUT)
     state = gpio.input(pin)
     state_pins = {
